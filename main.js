@@ -31,13 +31,15 @@ else if (altura => 190) {
 
 /* TERCERA CLASE - CICLOS */
 
-let gusto = prompt("Ingresar un gusto de Ginevré para saber el precio");
+let gusto = prompt("Ingresar un gusto de Ginevré para saber el precio (dry, blue, rosado, citric o gold");
 let cantidad = prompt("Ingresar cantidad de botellas de 600ml")
 let precioDry = "1000";
 let precioBlue = "1000";
 let precioRosado = "1000";
 let precioGold = "1300";
 let precioCitric = "1200";
+
+let precioMultiplicado = (gusto * cantidad)
 //Repetimos hasta que se ingresa "ESC"
 while (gusto != "ESC") {
     switch (gusto) {
@@ -56,14 +58,20 @@ while (gusto != "ESC") {
         case "gold":
             alert("El precio total seria " + precioGold * cantidad);
             break;
+
+        case gusto * cantidad > "5000":
+            alert("Tenes un descuento! Tu compra bajo al precio de " + gusto * cantidad - 500);
+        
+
         default:
             alert("Ese no es un gusto de Ginevré, intentalo de vuelta.");
             break;
 
             
     }
+
+}      
     gusto = prompt("Ingresar un gusto de Ginevré para saber el precio");
     cantidad = prompt("Ingresar cantidad de botellas de 600ml");
 
-    
-}
+
